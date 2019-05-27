@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./run.py" ]
+# sh -c allows for environment variable usage
+CMD [ "sh", "-c", "python ./run.py ${pgn}" ] 
